@@ -1,6 +1,6 @@
 # REACT ISOMETRICBLOCKS
 
-Quick isometric :100:
+Quick isometric :100: on [codesandbox](https://codesandbox.io/s/scene-zdism)
 
 Exports a `<Scene>` component that accepts `props`:
 
@@ -18,8 +18,6 @@ Development oriented `props
 | plane |  undefined   |
 | silhouette   |  false   |
 
-# ORIGINAL README
+# CREDITS
 
 [A tutorial on how to render isometric blocks in the correct order](http://shaunlebron.github.io/IsometricBlocks)
-
-[![preview](preview-iso.png)](http://shaunlebron.github.io/IsometricBlocks)
