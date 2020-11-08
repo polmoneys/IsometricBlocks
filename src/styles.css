@@ -1,0 +1,339 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  color: currentColor;
+}
+
+* {
+  background-repeat: no-repeat;
+  padding: 0;
+  margin: 0;
+}
+
+@viewport {
+  width: device-width;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-y: scroll;
+}
+
+aside,
+article,
+footer,
+header,
+main,
+nav,
+section {
+  display: block;
+}
+
+img {
+  border: 0;
+  border-style: none;
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+}
+
+svg {
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+[hidden],
+template {
+  display: none !important;
+}
+
+[disabled] {
+  cursor: not-allowed;
+}
+
+a {
+  background: transparent;
+}
+
+.unset-styles {
+  display: unset;
+  margin-bottom: initial;
+  color: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* turn into a row (default) */
+
+.flex {
+  display: flex;
+}
+
+@media (orientation: landscape) {
+  /* col-to-row on landscape */
+  .flex-landscape {
+    display: flex;
+  }
+}
+
+.col {
+  flex-direction: column;
+  display: flex;
+}
+
+.flex-grid {
+  flex-wrap: wrap;
+}
+
+.row-gap > *:not(:last-child) {
+  --row-child-margin: 6px;
+  margin-right: var(--row-child-margin);
+}
+
+.col-gap > *:not(:last-child) {
+  --column-child-margin: 6px;
+  margin-bottom: var(--column-child-margin);
+}
+
+/* A) main axis */
+
+.main-start {
+  justify-content: flex-start;
+}
+
+.main-end {
+  justify-content: flex-end;
+}
+
+.main-center {
+  justify-content: center;
+}
+
+.main-around {
+  justify-content: space-around;
+}
+
+.main-between {
+  justify-content: space-between;
+}
+
+/* B)  */
+
+.cross-center {
+  align-items: center;
+}
+
+.cross-start {
+  align-items: flex-start;
+}
+
+.cross-end {
+  align-items: flex-end;
+}
+
+.cross-baseline {
+  align-items: baseline;
+}
+
+/* C)  */
+
+.wrap-start {
+  align-content: start;
+}
+
+.wrap-center {
+  align-content: center;
+}
+
+.wrap-around {
+  align-content: space-around;
+}
+
+.wrap-between {
+  align-content: space-between;
+}
+
+/* D) like .cross- but for 1 element */
+
+.self-start {
+  align-self: start;
+}
+
+.self-center {
+  align-self: center;
+}
+
+.self-end {
+  align-self: end;
+}
+
+.self-stretch {
+  align-self: stretch;
+}
+
+.self-none {
+  flex: none;
+  /* inflexible (w/h) => flex: 0 0 auto */
+}
+
+/* E)   */
+
+.self-push-left {
+  margin-left: auto;
+}
+
+.self-push-right {
+  margin-right: auto;
+}
+
+.self-push-top {
+  margin-top: auto;
+}
+
+.self-push-bottom {
+  margin-bottom: auto;
+}
+
+.self-grow {
+  flex: 1;
+}
+
+/*
+
+Font size follow h1-h6 analogy enchanced with h0
+    
+    candidates:
+    --font-word-spacing: 2px;
+    --font-letter-spacing:1px;
+    letter-spacing: var(--font-letter-spacing, 1px);
+    word-spacing: var(--font-word-spacing, 2px);
+
+*/
+
+:root {
+  --h00: calc((16 / 16) * 1rem);
+  /* default */
+  --h0: 6vmin;
+  --h1: calc((42 / 16) * 1rem);
+  --h2: calc((36 / 16) * 1rem);
+  --h3: calc((24 / 16) * 1rem);
+  --h4: calc((14 / 16) * 1rem);
+  --h5: calc((14 / 16) * 1rem);
+  --h6: calc((14 / 16) * 1rem);
+  --font-weight-default: 400;
+  --font-weight-bold: 700;
+  --font-height-default: 1.4;
+  --font-height-s: 1.15;
+  --font-clamp-lines: 3;
+}
+
+body {
+  font-size: var(--h00);
+  font-weight: var(--font-weight-default);
+  line-height: var(--font-height-default);
+  font-family: system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  text-rendering: optimizeLegibility;
+  text-align: left;
+  color: var(--colr);
+}
+
+.font-serif {
+  font-family: Constantia, Lucida Bright, Lucidabright, Lucida Serif, Lucida,
+    DejaVu Serif, Bitstream Vera Serif, Liberation Serif, Georgia, serif;
+}
+
+.font-mono {
+  font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+}
+
+.h0 {
+  font-size: var(--h0);
+}
+
+.h1 {
+  font-size: var(--h1);
+}
+
+.h2 {
+  font-size: var(--h2);
+}
+
+.h3 {
+  font-size: var(--h3);
+}
+
+.h4 {
+  font-size: var(--h4);
+}
+
+.h5 {
+  font-size: var(--h5);
+}
+
+.h6 {
+  font-size: var(--h6);
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+.font-bold {
+  /* text-shadow: 1px 0 0 currentColor; */
+  font-weight: var(--font-weight-bold);
+}
+
+.font-number {
+  font-variant-numeric: tabular-nums;
+}
+
+.font-uppercase {
+  text-transform: uppercase;
+}
+
+.font-break {
+  /*better than slice*/
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* 
+
+  EXAMPLE INLINE USAGE
+  -------------
+    <p class="font-clamp" style="--font-clamp-lines: 2"> 
+      {longContent}
+    </p> 
+
+ */
+
+.font-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: var(--font-clamp-lines, 3);
+  -webkit-box-orient: vertical;
+  line-clamp: var(--font-clamp-lines, 3);
+  overflow: hidden;
+}
+
+canvas {
+  width: 100%;
+  background-color: #f5f5f5;
+  border: 1px solid #d7d7d7;
+}
